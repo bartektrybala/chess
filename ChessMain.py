@@ -65,7 +65,12 @@ def drawBoard(screen):
 Draw the pieces on the board using the current GamaState.board
 '''
 def drawPieces(screen, board):
-    pass
+    for r in range(DIMENSION):
+        for c in range(DIMENSION):
+            piece = board[r][c]
+            if piece != '--':  #if not empty
+                screen.blit(IMAGES[piece], p.Rect(c*SQ_SIZE, r*SQ_SIZE, SQ_SIZE, SQ_SIZE))
+
 
 if __name__ == '__main__':
      main() 
